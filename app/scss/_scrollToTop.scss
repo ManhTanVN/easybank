@@ -1,0 +1,27 @@
+.scrollToTop {
+	width: toRem(40);
+	height: toRem(40);
+	border-radius: 50%;
+	position: fixed;
+	bottom: toRem(30);
+	right: toRem(-50);
+	z-index: 888;
+	border: toRem(2) solid $brightCyan;
+	transition: all 500ms ease-in;
+	cursor: pointer;
+	> i {
+		display: inline-block;
+		width: toRem(10);
+		height: toRem(10);
+		border-top: 3px solid $brightCyan;
+		border-left: 3px solid $brightCyan;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-36%) rotate(45deg);
+		animation: dancing 2500ms infinite forwards;
+	}
+	&.active {
+		right: toRem(30);
+	}
+}

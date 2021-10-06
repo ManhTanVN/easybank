@@ -1,0 +1,35 @@
+@function toRem($value) {
+	$remValue: ($value / 16) + rem;
+	@return $remValue;
+}
+
+// Break points
+
+@media (min-with: toRem(1024)) {
+	// styles go here
+}
+
+//medium : 640 =40 ; large: 1024 = 64 ; xlarge: 1400 = 87.5
+
+$breakpoint-up: (
+	'medium': '40em',
+	'large': '64em',
+	'xlarge': '87.5em'
+);
+//small : 639 = 39.9375 medium : 1024 = 63.9375 ; large: 1399 = 87.4375
+$breakpoint-down: (
+	'small': '39.9375em',
+	'medium': '63.9375em',
+	'large': '87.4375em'
+);
+
+@mixin breakpoint-up($size) {
+	@media (min-width: map-get($breakpoint-up, $size)) {
+		@content;
+	}
+}
+@mixin breakpoint-down($size) {
+	@media (max-width: map-get($breakpoint-down, $size)) {
+		@content;
+	}
+}

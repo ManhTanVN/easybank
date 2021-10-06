@@ -1,0 +1,33 @@
+@keyframes appearOut {
+	0% {
+		height: 1px;
+		overflow: hidden;
+		opacity: 0;
+	}
+	1% {
+		// height: 50%;
+		overflow: initial;
+	}
+	100% {
+		height: auto;
+		opacity: 1;
+	}
+}
+
+@keyframes dancing {
+	0% {
+		transform: translateX(-50%) translateY(-36%) rotate(45deg);
+	}
+	25% {
+		transform: translateX(-50%) translateY(-55%) rotate(45deg);
+	}
+	50% {
+		transform: translateX(-50%) translateY(-36%) rotate(45deg);
+	}
+	75% {
+		transform: translateX(-50%) translateY(-55%) rotate(45deg);
+	}
+	100% {
+		transform: translateX(-50%) translateY(-36%) rotate(45deg);
+	}
+}

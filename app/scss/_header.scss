@@ -1,0 +1,59 @@
+.header {
+	&__logo {
+		img {
+			width: toRem(141);
+			height: toRem(22);
+		}
+	}
+	&__menu {
+		position: relative;
+		> span {
+			display: block;
+			width: toRem(26);
+			height: toRem(2);
+			background: $darkBlue;
+			transform-origin: center;
+			transition: all 300ms ease-in-out;
+			&:not(:last-child) {
+				margin-bottom: toRem(5);
+			}
+		}
+	}
+
+	&__links {
+		a {
+			display: inline-block;
+			color: $grayishBlue;
+			font-size: $sm;
+			position: relative;
+			transition: all 300ms ease-in-out;
+			cursor: pointer;
+
+			&:not(:last-child) {
+				margin-right: toRem(32);
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				width: 100%;
+				top: 208%;
+				left: 0;
+				height: 5px;
+				background: linear-gradient(to right, $limeGreen, $brightCyan);
+				transition: all 300ms ease-in-out;
+				opacity: 0;
+			}
+			&:hover {
+				color: $darkBlue;
+			}
+			&:hover::after {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+nav {
+	padding: toRem(17) toRem(24);
+}

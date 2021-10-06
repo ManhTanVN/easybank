@@ -1,0 +1,83 @@
+.hero {
+	background: $veryLightGray;
+	.container {
+		@include breakpoint-up(large) {
+			display: flex;
+			align-items: center;
+		}
+	}
+	&__image {
+		position: relative;
+		width: 100%;
+		min-height: toRem(280);
+		background-image: url(../../images/bg-intro-mobile.svg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		padding: 0;
+
+		@include breakpoint-up(medium) {
+			min-height: 25rem;
+			background-position: center 60%;
+		}
+		&::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background-image: url(../../images/image-mockups.png);
+			background-size: 91%;
+			background-repeat: no-repeat;
+			background-position: center bottom;
+			@include breakpoint-up(medium) {
+				background-position: center 1px;
+				background-size: 55%;
+			}
+		}
+
+		@include breakpoint-up(large) {
+			height: toRem(565);
+			order: 2;
+			max-width: 61.5%;
+			background-image: none;
+
+			&::before {
+				content: '';
+				width: 150%;
+				height: 100%;
+				position: absolute;
+				background-image: url(../../images/bg-intro-desktop.svg);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-position: left -200px;
+				right: -119px;
+				left: -1px;
+			}
+
+			&::after {
+				height: 200%;
+				width: 150%;
+				background-size: 64%;
+				background-position: 146px -93px;
+				left: -3%;
+			}
+		}
+	}
+	&__content {
+		text-align: center;
+		h1 {
+			margin-top: toRem(30);
+			margin: 0;
+		}
+
+		p {
+			margin-top: toRem(27);
+		}
+		@include breakpoint-up(large) {
+			flex: 1;
+			order: 1;
+			text-align: left;
+			font-size: $xlarge;
+		}
+	}
+}

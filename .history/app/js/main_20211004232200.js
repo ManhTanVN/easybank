@@ -55,6 +55,8 @@
     let buttonToTop = select('.scrollToTop')
     onScroll(document,() => {
         let y = window.scrollY;
+        console.log(buttonToTop)
+        console.log(y)
         if(y > 60) {
             buttonToTop.classList.add('active')
         }else {
@@ -66,7 +68,7 @@
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
-        });
+          });
         // window.scrollTo({top: 0, behavior: 'smooth'});
     })
 
